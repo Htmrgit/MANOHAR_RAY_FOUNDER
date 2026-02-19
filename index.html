@@ -1,228 +1,493 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta name="google-site-verification" content="wIhP6LzQGBa0jAwPf0J1_CcCcoiggYIj1aLRPM0pAAw" />
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Manohar Kumar Ray - Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-  <style>
-    .fade-in {
-      animation: fadeIn 2s ease-in-out;
-    }
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    .slide-up {
-      animation: slideUp 2s ease-in-out;
-    }
-    @keyframes slideUp {
-      0% {
-        transform: translateY(100%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-    .bounce {
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-30px);
-      }
-      60% {
-        transform: translateY(-15px);
-      }
-    }
-  .animated-bg-orange {
-    background-color: #ffa500; /* Start with orange */
-    animation: vibrant-color-change 5s infinite alternate;
-  }
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <!-- Primary Meta Tags -->
+    <title>MarketingUB | Digital Marketing & Business Automation Agency</title>
+    <meta name="title" content="MarketingUB | Digital Marketing & Business Automation Agency">
+    <meta name="description" content="MarketingUB helps small businesses grow faster with smart marketing, high-intent lead generation, and business automation. Founded by Manohar Ray (Mano).">
+    <meta name="keywords" content="Digital Marketing, Business Automation Agency, lead generation India, WhatsApp automation, business consulting, Manohar Ray, small business growth, sales automation, MarketingUB">
+    <meta name="author" content="Manohar Ray (Mano)">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://marketingub.in/">
 
-  @keyframes vibrant-color-change {
-    0% {
-      background-color: #ffa500; /* Orange */
-    }
-    50% {
-      background-color: #ff4500; /* Red-orange */
-    }
-    100% {
-      background-color: #ff6347; /* Tomato */
-    }
-  
-  
-  </style>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marketingub.in/">
+    <meta property="og:title" content="MarketingUB | Digital Marketing & Business Automation Agency">
+    <meta property="og:description" content="Get more leads, better follow-ups, and higher sales using simple automation systems. Your growth partner.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://marketingub.in/">
+    <meta property="twitter:title" content="MarketingUB | Digital Marketing & Business Automation Agency">
+    <meta property="twitter:description" content="Scaling brands with Mano's strategy and automation.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#4f46e5">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-shape {
+            animation: morph 15s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 30% / 50% 60% 30% 60%; }
+        }
+
+        #mobile-menu {
+            transition: all 0.4s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.95);
+        }
+        #mobile-menu.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 10px; }
+    </style>
 </head>
-<body class="font-roboto bg-white text-gray-800">
-  <!-- Navbar -->
-  <nav class="animated-bg-orange shadow-md fixed w-full z-10 fade-in">
-    <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-      <div class="text-xl font-bold">Manohar Kumar Ray</div>
-      <div>
-        <a class="px-4 py-2 text-gray-700 hover:text-blue-500" href="#home">Home</a>
-        <a class="px-4 py-2 text-gray-700 hover:text-blue-500" href="#about">About</a>
-        <a class="px-4 py-2 text-gray-700 hover:text-blue-500" href="#skills">Skills</a>
-        <a class="px-4 py-2 text-gray-700 hover:text-blue-500" href="#projects">Projects</a>
-        <a class="px-4 py-2 text-gray-700 hover:text-blue-500" href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-  <!-- Home Section -->
-  <section class="min-h-screen flex items-center justify-center bg-gray-100 relative" id="home">
-    <video autoplay class="absolute inset-0 w-full h-full object-cover opacity-50" loop muted>
-      <source src="https://videos.pexels.com/video-files/30380306/13019852_1920_1080_25fps.mp4" type="video/mp4"/>
-      Your browser does not support the video tag.
-    </video>
-    <div class="text-center relative z-10 fade-in">
-      <h1 class="text-4xl font-bold mb-4">Manohar Kumar Ray</h1>
-      <p class="text-xl mb-6">Experienced Professional in Client Services & Business Operations</p>
-      <img alt="Professional photo of a developer with a friendly smile, wearing a casual shirt, standing against a plain background" class="mx-auto rounded-full mb-6" src="https://t3.ftcdn.net/jpg/07/13/35/82/360_F_713358254_pM12hayFvGkMbXwU1wERawwC2Tu3Mfpy.jpg"/>
-      <a class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition duration-300 bounce" href="https://drive.google.com/file/d/1H_pSSxT9WcCvv218AN-iywvCKjZXylnx/view?usp=sharing">Download Resume</a>
-    </div>
-  </section>
-  <!-- About Me Section -->
-  <section class="py-20 bg-white slide-up" id="about">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
-      <div class="max-w-2xl mx-auto text-center">
-        <p class="mb-6">I am a passionate professional with experience in relationship management and operations, blending technical skills with creativity to solve real-world problems. Currently pursuing a Bachelor of Commerce (B.Com) from IGNOU, I bring strong expertise in Excel, WordPress, data analysis, and financial coordination.</p>
-        <div class="flex justify-center space-x-4">
-          <div class="text-center">
-            <i class="fas fa-database text-4xl text-blue-500 mb-2"></i>
-            <p>NSDC Certified in Database Management</p>
-          </div>
-          <div class="text-center">
-            <i class="fab fa-wordpress text-4xl text-blue-500 mb-2"></i>
-            <p>NSDC Certified in WordPress Web Development</p>
-          </div>
-          <div class="text-center">
-            <i class="fas fa-laptop-code text-4xl text-blue-500 mb-2"></i>
-            <p>BS CIT in IT Skills</p>
-          </div>
+<body class="bg-[#fafaff] text-slate-900 overflow-x-hidden">
+
+    <!-- Header Navigation -->
+    <nav class="fixed w-full z-[100] px-4 py-4 md:py-6">
+        <div class="max-w-7xl mx-auto glass rounded-3xl px-6 py-4 flex justify-between items-center shadow-2xl relative z-[101]">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-indigo-600 text-white rounded-xl flex items-center justify-center font-black text-xl shadow-lg shadow-indigo-200">M</div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tighter leading-none">Manohar Ray</span>
+                    <span class="text-[9px] font-bold text-indigo-500 uppercase tracking-[0.2em]">Founder, MarketingUB</span>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center space-x-8 font-bold text-slate-600 text-sm">
+                <a class="hover:text-indigo-600 transition" href="#home">Home</a>
+                <a class="hover:text-indigo-600 transition" href="#founder">About Founder</a>
+                <a class="hover:text-indigo-600 transition" href="#services">Agency Services</a>
+                <a class="hover:text-indigo-600 transition" href="#portfolio">Our Results</a>
+                <a class="bg-indigo-600 text-white px-6 py-3 rounded-2xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-100" href="#contact">Free Consultation</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-700">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- Skills Section -->
-  <section class="py-20 bg-gray-100 slide-up" id="skills">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="text-center p-4 bg-white shadow-md rounded-lg">
-          <i class="fas fa-file-excel text-4xl text-green-500 mb-2"></i>
-          <h3 class="text-xl font-bold mb-2">Advanced Excel</h3>
-          <p>90%</p>
+
+        <!-- Fullscreen Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-[90] flex flex-col items-center justify-center space-y-8 text-3xl font-black text-slate-900 lg:hidden px-10 text-center">
+            <a class="mobile-link" href="#home">Home</a>
+            <a class="mobile-link" href="#founder">The Founder</a>
+            <a class="mobile-link" href="#services">MarketingUB</a>
+            <a class="mobile-link" href="#portfolio">Success Stories</a>
+            <a class="mobile-link text-indigo-600" href="#contact">Get Started</a>
+            <button id="menu-close" class="mt-12 w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center text-2xl">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-        <div class="text-center p-4 bg-white shadow-md rounded-lg">
-          <i class="fas fa-database text-4xl text-blue-500 mb-2"></i>
-          <h3 class="text-xl font-bold mb-2">SQL</h3>
-          <p>85%</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-indigo-50/50 -skew-x-12 translate-x-32 z-0 hidden lg:block"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-indigo-600 uppercase bg-indigo-100/50 rounded-full">
+                    <span class="w-2 h-2 bg-indigo-600 rounded-full animate-ping"></span>
+                    Personal Brand & Agency
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[1.1] tracking-tight text-slate-900">
+                    Scaling Brands with <span class="gradient-text">Mano's Strategy</span> & Automation
+                </h1>
+                <p class="text-lg md:text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl">
+                    I am <span class="text-slate-900 font-bold">Manohar Ray (Mano)</span>. Through my agency <span class="text-indigo-600 font-bold">MarketingUB</span>, I help businesses eliminate manual work and skyrocket their sales using high-intent lead systems.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                    <a href="#contact" class="group w-full sm:w-auto px-10 py-5 bg-indigo-600 text-white rounded-[2rem] font-black shadow-2xl shadow-indigo-200 hover:bg-indigo-700 transition-all hover:scale-105 flex items-center justify-center gap-3">
+                        Consult with Mano <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </a>
+                    <a href="https://wa.me/919355650312" class="w-full sm:w-auto px-10 py-5 bg-white text-slate-900 border border-slate-200 rounded-[2rem] font-black hover:bg-slate-50 transition-all flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-green-500 text-xl"></i> WhatsApp Mano
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="hero-shape absolute inset-0 bg-gradient-to-tr from-indigo-200 to-pink-200 blur-3xl opacity-30 -z-10"></div>
+                <div class="relative bg-white p-4 rounded-[3rem] shadow-2xl lg:rotate-2">
+                    <img src="https://t3.ftcdn.net/jpg/07/13/35/82/360_F_713358254_pM12hayFvGkMbXwU1wERawwC2Tu3Mfpy.jpg" alt="Manohar Ray Founder" class="rounded-[2.5rem] w-full object-cover grayscale-0 lg:grayscale hover:grayscale-0 transition duration-700">
+                    <div class="absolute -bottom-8 -right-8 glass p-6 rounded-3xl shadow-xl animate-float hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-2xl">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Founder Profile</p>
+                                <p class="text-xl font-black text-slate-900">Manohar Ray</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="text-center p-4 bg-white shadow-md rounded-lg">
-          <i class="fab fa-wordpress text-4xl text-blue-500 mb-2"></i>
-          <h3 class="text-xl font-bold mb-2">WordPress</h3>
-          <p>80%</p>
+    </header>
+
+    <!-- The Founder & The Agency -->
+    <section id="founder" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-indigo-600 font-black uppercase tracking-[0.2em] text-sm mb-6">Expertise & Vision</h2>
+                    <h3 class="text-4xl md:text-5xl font-black mb-8 leading-tight">Meet Manohar Ray & <br><span class="gradient-text">MarketingUB</span></h3>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Beyond being a founder, I am a Sales & Growth Consultant dedicated to helping small businesses overcome the chaos of lead management. **MarketingUB** is the execution arm of my strategies—where technology meets practical business growth.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-3 font-bold text-slate-700">
+                            <i class="fas fa-check-circle text-indigo-600"></i> Founded on Trust & Automation
+                        </div>
+                        <div class="flex items-center gap-3 font-bold text-slate-700">
+                            <i class="fas fa-check-circle text-indigo-600"></i> Focused on Small Business Success
+                        </div>
+                        <div class="flex items-center gap-3 font-bold text-slate-700">
+                            <i class="fas fa-check-circle text-indigo-600"></i> 1-on-1 Personalized Strategic Guidance
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="p-4 bg-indigo-50 rounded-2xl border border-indigo-100 flex-1">
+                            <p class="text-2xl font-black text-indigo-600">Founder</p>
+                            <p class="text-xs font-bold uppercase text-slate-400">Personal Brand</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex-1">
+                            <p class="text-2xl font-black text-slate-900">Agency</p>
+                            <p class="text-xs font-bold uppercase text-slate-400">Execution Hub</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="space-y-6">
+                        <div class="bg-indigo-600 rounded-3xl p-8 text-white shadow-xl shadow-indigo-100 h-64 flex flex-col justify-end">
+                            <i class="fas fa-robot text-4xl mb-6"></i>
+                            <p class="font-black text-xl">Smart Systems</p>
+                            <p class="text-xs opacity-80">Designed by Mano</p>
+                        </div>
+                        <div class="bg-white rounded-3xl p-8 shadow-2xl border border-slate-50 h-48 flex flex-col justify-end">
+                            <i class="fas fa-bullseye text-3xl text-indigo-600 mb-4"></i>
+                            <p class="font-black text-lg">MarketingUB</p>
+                            <p class="text-xs text-slate-400 font-bold uppercase">Lead Gen Agency</p>
+                        </div>
+                    </div>
+                    <div class="space-y-6 pt-12">
+                        <div class="bg-slate-900 rounded-3xl p-8 text-white shadow-xl h-48 flex flex-col justify-end">
+                            <i class="fas fa-brain text-3xl text-pink-500 mb-4"></i>
+                            <p class="font-black text-lg">Consulting</p>
+                            <p class="text-xs opacity-60">1-on-1 sessions</p>
+                        </div>
+                        <div class="bg-indigo-50 rounded-3xl p-8 h-64 flex flex-col justify-end">
+                            <i class="fas fa-shield-alt text-4xl text-indigo-600 mb-6"></i>
+                            <p class="font-black text-xl text-slate-900">Trust</p>
+                            <p class="text-xs text-slate-500 font-bold uppercase">Client first approach</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="text-center p-4 bg-white shadow-md rounded-lg">
-          <i class="fas fa-paint-brush text-4xl text-pink-500 mb-2"></i>
-          <h3 class="text-xl font-bold mb-2">Canva</h3>
-          <p>75%</p>
+    </section>
+
+    <!-- Agency Services -->
+    <section id="services" class="py-24 bg-[#f8f9ff]">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-indigo-600 font-black uppercase tracking-[0.2em] text-sm mb-6">The Agency Ecosystem</h2>
+            <h3 class="text-4xl md:text-5xl font-black mb-16">MarketingUB Solutions</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                <article class="service-card bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm relative overflow-hidden">
+                    <div class="w-16 h-16 bg-white shadow-xl text-green-600 rounded-2xl flex items-center justify-center mb-8 text-3xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h4 class="text-2xl font-black mb-4">WhatsApp Automation</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Convert chats into sales while you sleep with our 24/7 intelligent response systems.</p>
+                </article>
+                <article class="service-card bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm relative overflow-hidden">
+                    <div class="w-16 h-16 bg-white shadow-xl text-pink-600 rounded-2xl flex items-center justify-center mb-8 text-3xl">
+                        <i class="fas fa-users-viewfinder"></i>
+                    </div>
+                    <h4 class="text-2xl font-black mb-4">High-Intent Leads</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Mano's custom strategy focused on finding leads ready to talk to your sales team today.</p>
+                </article>
+                <article class="service-card bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm relative overflow-hidden">
+                    <div class="w-16 h-16 bg-white shadow-xl text-blue-600 rounded-2xl flex items-center justify-center mb-8 text-3xl">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4 class="text-2xl font-black mb-4">AI Chatbots</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Intelligent bots that understand your business FAQs and capture leads accurately.</p>
+                </article>
+            </div>
         </div>
-        <div class="text-center p-4 bg-white shadow-md rounded-lg">
-          <i class="fas fa-chart-line text-4xl text-yellow-500 mb-2"></i>
-          <h3 class="text-xl font-bold mb-2">Data Analysis</h3>
-          <p>85%</p>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why-us" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-indigo-600 rounded-[3rem] p-8 md:p-20 text-white relative overflow-hidden shadow-3xl">
+                <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h3 class="text-3xl md:text-5xl font-black mb-8 leading-tight">The Best of Personal Brand <br>& Professional Agency</h3>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-shield-halved"></i></div>
+                                <div>
+                                    <p class="font-bold text-lg">Mano's Direct Involvement</p>
+                                    <p class="text-white/70 text-sm">Every project is reviewed by Manohar Ray himself.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-rocket"></i></div>
+                                <div>
+                                    <p class="font-bold text-lg">MarketingUB Execution Power</p>
+                                    <p class="text-white/70 text-sm">Our agency team handles the heavy lifting of tech & ads.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-xl rounded-[2.5rem] p-10 border border-white/20 text-center">
+                        <img src="https://t3.ftcdn.net/jpg/07/13/35/82/360_F_713358254_pM12hayFvGkMbXwU1wERawwC2Tu3Mfpy.jpg" alt="Mano" class="w-24 h-24 rounded-full mx-auto mb-6 border-4 border-white/30 object-cover">
+                        <p class="text-lg font-bold mb-6">"Let's build a growth system together."</p>
+                        <a href="https://wa.me/919355650312" class="inline-block w-full px-10 py-5 bg-white text-indigo-600 rounded-2xl font-black hover:bg-slate-50 transition shadow-2xl">Consult with Manohar Ray</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="text-center p-4 bg-white shadow-md rounded-lg">
-          <i class="fas fa-bullhorn text-4xl text-red-500 mb-2"></i>
-          <h3 class="text-xl font-bold mb-2">Social Media Marketing</h3>
-          <p>75%</p>
+    </section>
+
+    <!-- Portfolio Results -->
+    <section id="portfolio" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-indigo-400 font-black uppercase tracking-[0.2em] text-sm text-center mb-6">Proven Success</h2>
+            <h3 class="text-4xl md:text-5xl font-black text-center mb-16">Results by <span class="text-indigo-400">MarketingUB</span></h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 hover:border-indigo-500 transition-all">
+                    <h4 class="text-xl font-bold mb-4">Finance Automation</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Automated revenue tracker for a restaurant chain outlets.</p>
+                    <span class="text-[10px] font-black tracking-widest uppercase py-1 px-3 bg-white/10 rounded-lg">Consultancy Case</span>
+                </div>
+                <div class="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 hover:border-pink-500 transition-all">
+                    <h4 class="text-xl font-bold mb-4">Wendor POS Solution</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">GST-ready POS implemented for multi-store inventory.</p>
+                    <span class="text-[10px] font-black tracking-widest uppercase py-1 px-3 bg-white/10 rounded-lg">Agency Implementation</span>
+                </div>
+                <div class="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 hover:border-green-500 transition-all">
+                    <h4 class="text-xl font-bold mb-4">Service Lead Scaling</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">300% growth in leads for a local coaching business.</p>
+                    <span class="text-[10px] font-black tracking-widest uppercase py-1 px-3 bg-white/10 rounded-lg">Growth Results</span>
+                </div>
+            </div>
         </div>
-        <div class="text-center p-4 bg-white shadow-md rounded-lg">
-          <i class="fas fa-comments text-4xl text-blue-500 mb-2"></i>
-          <h3 class="text-xl font-bold mb-2">Communication</h3>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-[#fafaff]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-5 gap-20">
+                <div class="lg:col-span-2">
+                    <h2 class="text-indigo-600 font-black uppercase tracking-[0.2em] text-sm mb-6">Initiate Contact</h2>
+                    <h3 class="text-4xl font-black mb-10 leading-tight">Consult with <br><span class="gradient-text">Manohar Ray</span></h3>
+                    
+                    <div class="space-y-8 mb-12">
+                        <div class="flex items-center gap-6 group cursor-pointer" onclick="window.location.href='https://wa.me/919355650312'">
+                            <div class="w-14 h-14 bg-white shadow-xl rounded-2xl flex items-center justify-center text-indigo-600 text-xl group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest">Growth Line</p>
+                                <p class="text-lg font-bold">Chat on WhatsApp</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 group">
+                            <div class="w-14 h-14 bg-white shadow-xl rounded-2xl flex items-center justify-center text-pink-600 text-xl group-hover:bg-pink-600 group-hover:text-white transition-all">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest">Email Mano</p>
+                                <p class="text-lg font-bold break-all">inquiry.MarketingUb@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div id="contact-form-container">
+                        <form id="google-sheet-form" class="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-2xl border border-slate-100 space-y-6 relative">
+                            <div class="absolute top-0 left-0 w-2 h-full bg-indigo-600"></div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">Full Name</label>
+                                    <input type="text" name="name" placeholder="E.g. Rahul Sharma" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 focus:bg-white border-2 border-transparent focus:border-indigo-100 transition outline-none text-sm font-bold">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">Phone Number</label>
+                                    <input type="tel" name="phone" placeholder="+91..." required class="w-full px-6 py-4 rounded-2xl bg-slate-50 focus:bg-white border-2 border-transparent focus:border-indigo-100 transition outline-none text-sm font-bold">
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">Business Type</label>
+                                <select name="businessType" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 focus:bg-white border-2 border-transparent focus:border-indigo-100 transition outline-none text-sm font-bold appearance-none cursor-pointer">
+                                    <option value="" disabled selected>Select Business Type</option>
+                                    <option value="Local Shop">Local Shop</option>
+                                    <option value="Startup">Startup</option>
+                                    <option value="Coaching/Service">Coaching/Service</option>
+                                    <option value="Restaurant">Restaurant</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">Requirement</label>
+                                <textarea name="message" rows="4" placeholder="How can Mano & MarketingUB help your business grow?" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 focus:bg-white border-2 border-transparent focus:border-indigo-100 transition outline-none text-sm font-bold"></textarea>
+                            </div>
+                            
+                            <button type="submit" id="submit-btn" class="w-full py-5 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 flex items-center justify-center gap-3">
+                                Send Inquiry to Mano <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div id="status-msg" class="hidden"></div>
+                </div>
+            </div>
         </div>
-        <div class="text-center p-4 bg-white shadow-md rounded-lg">
-          <i class="fas fa-lightbulb text-4xl text-yellow-500 mb-2"></i>
-          <h3 class="text-xl font-bold mb-2">Problem-Solving</h3>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-20">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
+                        <div class="w-10 h-10 bg-indigo-600 text-white rounded-xl flex items-center justify-center font-black text-xl">M</div>
+                        <span class="text-3xl font-black tracking-tighter">Manohar Ray</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm leading-relaxed font-medium">
+                        Bridging the gap between ambitious local businesses and high-end automation via **MarketingUB**.
+                    </p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://in.linkedin.com/in/thakurmanorajput" class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-xl hover:bg-indigo-600 transition shadow-lg"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/919355650312" class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-xl hover:bg-green-600 transition shadow-lg"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em]">© 2026 MarketingUB | Founder: Manohar Ray (Mano)</p>
+            </div>
         </div>
-        <div class="text-center p-4 bg-white shadow-md rounded-lg">
-          <i class="fas fa-handshake text-4xl text-green-500 mb-2"></i>
-          <h3 class="text-xl font-bold mb-2">Relationship Management</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Projects Section -->
-  <section class="py-20 bg-white slide-up" id="projects">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-          <h3 class="text-xl font-bold mb-2">Restaurant Finance Tracker</h3>
-          <p class="mb-4">Automated financial tracking for expenses and revenues.</p>
-          <p class="text-sm text-gray-600">Tools Used: Advanced Excel | Power BI | HTML | CSS | JAVA</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-          <h3 class="text-xl font-bold mb-2">Marketing Campaign</h3>
-          <p class="mb-4">Analyzed social media campaigns and visualized insights on Canva.</p>
-          <p class="text-sm text-gray-600">Tools Used: Canva, Social Media Marketing Techniques</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-          <h3 class="text-xl font-bold mb-2">WENDOR POS</h3>
-          <p class="mb-4">Help To Cratre Gst Billing And Mange Sale Purchase And Inventry</p>
-          <p class="text-sm text-gray-600">Tools Used: Advanced Excel | ExcelVba| HTML | CSS |Google Sheet </p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-          <h3 class="text-xl font-bold mb-2">Sales Deshboard</h3>
-         <p class="mb-4">Help To Cratre Gst Billing And Mange Sale Purchase And Inventry</p>
-          <p class="text-sm text-gray-600">Tools Used: Advanced Excel | Power BI | HTML | CSS | JAVA</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-          <h3 class="text-xl font-bold mb-2">Food Rate Management</h3>
-         <p class="mb-4">Help To Diside Restaurant menu Rate And Compair</p>
-         <p class="text-sm text-gray-600">Tools Used: Advanced Excel | Power BI | HTML | CSS | JAVA</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-          <h3 class="text-xl font-bold mb-2">Business Website</h3>
-         <p class="mb-4">We Crate Multiple Website For Difrent Business </p>
-         <p class="text-sm text-gray-600">Tools Used: WordPress |HTML | CSS | JAVA</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Contact Section -->
-  <section class="py-20 bg-gray-100 slide-up" id="contact">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Contact</h2>
-      <div class="max-w-2xl mx-auto">
-        <div class="text-center mb-8">
-          <p class="mb-2"><i class="fas fa-map-marker-alt text-blue-500"></i> Indirapuram, Ghaziabad-Uttar Pardesh, 201014</p>
-<p class="mb-2"><i class="fas fa-envelope text-blue-500"></i> inquiry.mano@gmail.com</p>
-        </div>
-        <script src="https://sheetdb.io/s/f/raq1x3pzhqw0r.js"></script>
-        <div class="text-center mt-8">
-          <a class="text-blue-500 mx-2" href="https://in.linkedin.com/in/thakurmanorajput?trk=people-guest_people_search-card"><i class="fab fa-linkedin text-2xl"></i></a>
-          <a class="text-pink-500 mx-2" href="https://www.instagram.com"><i class="fab fa-instagram text-2xl"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Footer -->
-  <footer class="bg-white py-4 text-center fade-in">
-    <p>© 2024-2025 : Manohar Kumar Ray. All Rights Reserved.</p>
-  </footer>
+    </footer>
+
+    <script>
+        // Menu Interactions
+        const menuBtn = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        const toggleMenu = () => {
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('overflow-hidden');
+        };
+
+        menuBtn.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // Form Submission Logic
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwDy5YHjfbv7z0qc4FNrpkLVdBudi2TJS5ZZ5oEGa-DdIH4K6RpvZbRaVwmcamDUJ_R/exec'; 
+        const form = document.getElementById('google-sheet-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const statusMsg = document.getElementById('status-msg');
+        const formContainer = document.getElementById('contact-form-container');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            
+            const formData = new FormData(form);
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    // Hide form and show success UI
+                    formContainer.classList.add('hidden');
+                    statusMsg.innerHTML = `
+                        <div class="bg-white p-12 rounded-[3.5rem] shadow-2xl border border-slate-100 text-center space-y-6">
+                            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto shadow-inner">
+                                <i class="fas fa-check-circle text-4xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-slate-900">Inquiry Sent!</h3>
+                            <div class="mt-4 p-6 bg-indigo-50 rounded-2xl border border-indigo-100">
+                                <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Your Lead ID:</p>
+                                <p class="text-4xl font-black text-indigo-600 tracking-tight">${data.ledId}</p>
+                            </div>
+                            <p class="text-slate-500 font-medium">Manohar Ray (Mano) will contact you shortly.</p>
+                            <button onclick="window.location.reload()" class="text-indigo-600 font-black uppercase text-xs tracking-widest hover:underline pt-4">Submit Another Inquiry</button>
+                        </div>
+                    `;
+                    statusMsg.classList.remove('hidden');
+                } else {
+                    throw new Error(data.error);
+                }
+            })
+            .catch(error => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Inquiry to Mano <i class="fas fa-paper-plane"></i>';
+                alert('Submission error! Please contact via WhatsApp.');
+                console.error(err);
+            });
+        });
+    </script>
 </body>
 </html>
