@@ -37,6 +37,71 @@
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         
+        /* YouTube Style Top Progress Bar */
+        #top-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(to right, #4f46e5, #db2777);
+            z-index: 10001;
+            box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+            transition: width 0.4s ease-out, opacity 0.4s ease-in;
+        }
+
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+        }
+
+        .loader-logo-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+        }
+
+        .loader-ring {
+            width: 100%;
+            height: 100%;
+            border: 2px solid #f3f4f6;
+            border-top: 2px solid #4f46e5;
+            border-radius: 50%;
+            animation: spin 1s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+        }
+
+        .loader-m {
+            position: absolute;
+            font-weight: 900;
+            font-size: 2rem;
+            color: #4f46e5;
+            animation: pulse-m 1.5s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse-m {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.15); opacity: 0.7; }
+        }
+
         .glass {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
@@ -87,6 +152,18 @@
     </style>
 </head>
 <body class="bg-[#fafaff] text-slate-900 overflow-x-hidden">
+
+    <!-- YouTube/Insta Style Progress Bar -->
+    <div id="top-progress-bar"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-logo-container">
+            <div class="loader-ring"></div>
+            <span class="loader-m text-indigo-600">M</span>
+        </div>
+        <p class="mt-8 text-[10px] font-black uppercase tracking-[0.4em] text-indigo-600 opacity-60">MarketingUB</p>
+    </div>
 
     <!-- Header Navigation -->
     <nav class="fixed w-full z-[100] px-4 py-4 md:py-6">
@@ -270,6 +347,7 @@
     <section id="why-us" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="bg-indigo-600 rounded-[3rem] p-8 md:p-20 text-white relative overflow-hidden shadow-3xl">
+                <div class="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                 <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
                     <div>
                         <h3 class="text-3xl md:text-5xl font-black mb-8 leading-tight">The Best of Personal Brand <br>& Professional Agency</h3>
@@ -376,8 +454,7 @@
                                     <option value="" disabled selected>Select Business Type</option>
                                     <option value="Local Shop">Local Shop</option>
                                     <option value="Startup">Startup</option>
-                                    <option value="Coaching/Service">Coaching/Service</option>
-                                    <option value="Restaurant">Restaurant</option>
+                                    <option value="Coaching/Service">Coaching/Service</option>                                    <option value="Restaurant">Restaurant</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
@@ -424,6 +501,35 @@
     </footer>
 
     <script>
+        // YouTube Style Top Progress Bar Logic
+        const topBar = document.getElementById('top-progress-bar');
+        let barWidth = 0;
+        const barInterval = setInterval(() => {
+            barWidth += Math.random() * 15;
+            if (barWidth > 90) clearInterval(barInterval);
+            topBar.style.width = barWidth + '%';
+        }, 150);
+
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            clearInterval(barInterval);
+            topBar.style.width = '100%';
+            
+            const preloader = document.getElementById('preloader');
+            
+            // Fade out bar and preloader together
+            setTimeout(() => {
+                topBar.style.opacity = '0';
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+                
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    topBar.style.display = 'none';
+                }, 600);
+            }, 500);
+        });
+
         // Menu Interactions
         const menuBtn = document.getElementById('menu-toggle');
         const menuClose = document.getElementById('menu-close');
@@ -460,7 +566,6 @@
             .then(res => res.json())
             .then(data => {
                 if (data.result === 'success') {
-                    // Hide form and show success UI
                     formContainer.classList.add('hidden');
                     statusMsg.innerHTML = `
                         <div class="bg-white p-12 rounded-[3.5rem] shadow-2xl border border-slate-100 text-center space-y-6">
